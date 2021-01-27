@@ -21,7 +21,7 @@
             <th>Kilometer price</th>
             <th>Horse power</th>
         </tr>
-        <tr th:each="vehicle : ${vehicleList}">
+        <tr th:each="vehicle : ${getVehicleList}">
             <td th:utext="${vehicle.licensePlate}">...</td>
             <td th:utext="${vehicle.type}">...</td>
             <td th:utext="${vehicle.brand}">...</td>

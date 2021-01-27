@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 class MainController {
 
     @Autowired
-    private static final RestTemplate restTemplate = new RestTemplate();
+    private  RestTemplate restTemplate;
 
     @Value("${welcome.message}")
     private String message;
