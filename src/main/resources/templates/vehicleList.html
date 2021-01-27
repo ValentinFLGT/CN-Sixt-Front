@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Vehicle List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+</head>
+<body>
+<h1>Vehicle List</h1>
+<!--<a href="addCharacter">Add Person</a>-->
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>License plate</th>
+            <th>Type</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Color</th>
+            <th>Rent price</th>
+            <th>Kilometer price</th>
+            <th>Horse power</th>
+        </tr>
+        <tr th:each="vehicle : ${vehicleList}">
+            <td th:utext="${vehicle.licensePlate}">...</td>
+            <td th:utext="${vehicle.type}">...</td>
+            <td th:utext="${vehicle.brand}">...</td>
+            <td th:utext="${vehicle.model}">...</td>
+            <td th:utext="${vehicle.color}">...</td>
+            <td th:utext="${vehicle.rentPrice}">...</td>
+            <td th:utext="${vehicle.kilometerPrice}">...</td>
+            <td th:utext="${vehicle.horsePower}">...</td>
+            <td th:utext="${vehicle.isAvailable}">...</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
