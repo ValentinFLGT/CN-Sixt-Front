@@ -20,8 +20,9 @@
             <th>Rent price</th>
             <th>Kilometer price</th>
             <th>Horse power</th>
+            <th>Is Available</th>
         </tr>
-        <tr th:each="vehicle : ${getVehicleList}">
+        <tr th:each="vehicle : ${vehicleList}">
             <td th:utext="${vehicle.licensePlate}">...</td>
             <td th:utext="${vehicle.type}">...</td>
             <td th:utext="${vehicle.brand}">...</td>
@@ -30,7 +31,7 @@
             <td th:utext="${vehicle.rentPrice}">...</td>
             <td th:utext="${vehicle.kilometerPrice}">...</td>
             <td th:utext="${vehicle.horsePower}">...</td>
-            <td th:utext="${vehicle.isAvailable}">...</td>
+            <td th:utext="${vehicle.available}">...</td>
         </tr>
     </table>
 </div>
