@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Client List</title>
+    <title>Register</title>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
 </head>
 <body>
@@ -35,27 +35,28 @@
             </ul>
         </div>
     </nav>
-</div>
-<h1>Client List</h1>
-<br/><br/>
+    <h1>Register</h1>
+    <form th:action="@{/register}"
+          th:object="${registerForm}" method="POST">
+        First Name:
+        <input type="text" th:field="*{firstName}" />
+        <br/>
+        Last Name:
+        <input type="text" th:field="*{lastname}" />
+        <br/>
+        Date of Birth:
+        <input type="date" th:field="*{dateOfBirth}" />
+        <br/>
+        License Number:
+        <input type="number" th:field="*{licenseNumber}" />
+        <br/>
+        License Acquisition Date:
+        <input type="date" th:field="*{licenseAcquisitionDate}" />
+        <br/>
 
-<div class="table">
-    <table border="1">
-        <tr>
-            <th>first name</th>
-            <th>last name</th>
-            <th>dob</th>
-            <th>license</th>
-            <th>license date</th>
-        </tr>
-        <tr th:each="client : ${clientList}">
-            <td th:utext="${client.firstName}">...</td>
-            <td th:utext="${client.lastName}">...</td>
-            <td th:utext="${client.dateOfBirth}">...</td>
-            <td th:utext="${client.licenseNumber}">...</td>
-            <td th:utext="${client.licenseAcquisitionDate}">...</td>
-        </tr>
-    </table>
+        <input type="submit" value="Register" />
+    </form>
 </div>
+
 </body>
 </html>
