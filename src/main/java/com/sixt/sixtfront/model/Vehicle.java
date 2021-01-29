@@ -1,6 +1,6 @@
 package com.sixt.sixtfront.model;
 
-public abstract class Vehicle {
+public class Vehicle {
 
     private Integer id;
     private String licensePlate;
@@ -11,7 +11,6 @@ public abstract class Vehicle {
     private Float rentPrice;
     private Float kilometerPrice;
     private Integer horsePower;
-    private Boolean isAvailable;
 
     public Vehicle() {
     }
@@ -22,8 +21,8 @@ public abstract class Vehicle {
                    String model, String color,
                    Float rentPrice,
                    Float kilometerPrice,
-                   Integer horsePower,
-                   Boolean isAvailable) {
+                   Integer horsePower
+    ) {
         this.id = id;
         this.licensePlate = licensePlate;
         this.type = type;
@@ -33,7 +32,6 @@ public abstract class Vehicle {
         this.rentPrice = rentPrice;
         this.kilometerPrice = kilometerPrice;
         this.horsePower = horsePower;
-        this.isAvailable = isAvailable;
     }
 
     public Integer getId() {
@@ -106,14 +104,6 @@ public abstract class Vehicle {
 
     public void setHorsePower(Integer horsePower) {
         this.horsePower = horsePower;
-    }
-
-    public Boolean getAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(Boolean available) {
-        isAvailable = available;
     }
 }
 

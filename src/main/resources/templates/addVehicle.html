@@ -2,31 +2,40 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Add Person</title>
+    <title>Add a Vehicle</title>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
 </head>
 <body>
-<h1>Create a Character:</h1>
+<h1>Create a Vehicle:</h1>
 
-<form th:action="@{/addCharacter}"
-      th:object="${characterForm}" method="POST">
-    Name:
-    <input type="text" th:field="*{name}" />
+<form th:action="@{/addVehicle}"
+      th:object="${vehicleForm}" method="POST">
+    License plate:
+    <input type="text" th:field="*{licensePlate}" />
     <br/>
-    Gender:
-    <input type="text" th:field="*{gender}" />
+    Type:
+    <input type="text" th:field="*{type}" />
     <br/>
+    Brand:
+    <input type="text" th:field="*{brand}" />
+    <br/>
+    Model:
+    <input type="text" th:field="*{model}" />
+    <br/>
+    Color:
+    <input type="text" th:field="*{color}" />
+    <br/>
+    Rent Price:
+    <input type="text" th:field="*{rentPrice}" />
+    <br/>
+    Kilometer Price:
+    <input type="text" th:field="*{kilometerPrice}" />
+    <br/>
+    Horse Power:
+    <input type="text" th:field="*{horsePower}" />
+    <br/>
+
     <input type="submit" value="Create" />
 </form>
-
-<br/>
-
-<!-- Check if errorMessage is not null and not empty -->
-
-<div th:if="${errorMessage}" th:utext="${errorMessage}"
-     style="color:red;font-style:italic;">
-    ...
-</div>
-
 </body>
 </html>
