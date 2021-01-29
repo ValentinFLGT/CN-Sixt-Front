@@ -1,37 +1,89 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Vehicle List</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>SIXT</title>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
 </head>
 <body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" th:href="@{/index}">SIXT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/vehicleList}">Vehicles <span class="sr-only">(current)</span></a>
+                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#">My Account</a>-->
+<!--                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/myAccount}">My Account</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
 <h1>Vehicle List</h1>
-<a href="addVehicle">Add a vehicle</a>
-<br/><br/>
-<div>
-    <table border="1">
-        <tr>
-            <th>License plate</th>
-            <th>Type</th>
-            <th>Brand</th>
-            <th>Model</th>
-            <th>Color</th>
-            <th>Rent price</th>
-            <th>Kilometer price</th>
-            <th>Horse power</th>
-        </tr>
-        <tr th:each="vehicle : ${vehicleList}">
-            <td th:utext="${vehicle.licensePlate}">...</td>
-            <td th:utext="${vehicle.type}">...</td>
-            <td th:utext="${vehicle.brand}">...</td>
-            <td th:utext="${vehicle.model}">...</td>
-            <td th:utext="${vehicle.color}">...</td>
-            <td th:utext="${vehicle.rentPrice}">...</td>
-            <td th:utext="${vehicle.kilometerPrice}">...</td>
-            <td th:utext="${vehicle.horsePower}">...</td>
-        </tr>
-    </table>
+<div class="container">
+    <div class="container">
+        <a href="addVehicle">Add a vehicle</a>
+    </div>
+<!--    <table border="1">-->
+<!--        <tr>-->
+<!--            <th>License plate</th>-->
+<!--            <th>Type</th>-->
+<!--            <th>Brand</th>-->
+<!--            <th>Model</th>-->
+<!--            <th>Color</th>-->
+<!--            <th>Rent price</th>-->
+<!--            <th>Kilometer price</th>-->
+<!--            <th>Horse power</th>-->
+<!--        </tr>-->
+<!--        <tr th:each="vehicle : ${vehicleList}">-->
+<!--            <td th:utext="${vehicle.licensePlate}">...</td>-->
+<!--            <td th:utext="${vehicle.type}">...</td>-->
+<!--            <td th:utext="${vehicle.brand}">...</td>-->
+<!--            <td th:utext="${vehicle.model}">...</td>-->
+<!--            <td th:utext="${vehicle.color}">...</td>-->
+<!--            <td th:utext="${vehicle.rentPrice}">...</td>-->
+<!--            <td th:utext="${vehicle.kilometerPrice}">...</td>-->
+<!--            <td th:utext="${vehicle.horsePower}">...</td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+    <div class="container">
+        <div class="row">
+
+                <div class="card col-md-3" th:each="vehicle : ${vehicleList}" style="margin: 20px;">
+                    <a th:href="@{/showVehicle}">
+                        <img class="card-img-top" src="https://www.largus.fr/images/images/prix-audi-a5-sportback4.jpg" alt="Card image cap" style="height: 200px; width: 100%; display: block;">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title" th:utext="${vehicle.brand}">...</h4>
+                        <h5 th:utext="${vehicle.model}">...</h5>
+                        <p th:utext="${vehicle.color}">...</p>
+                        <p th:utext="${vehicle.rentPrice}" style="display: inline;">...</p>
+                        <p style="display: inline;"> $ per day</p>
+                        <p class="card-text" style="margin-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur beatae distinctio dolor dolorem, dolorum expedita id mollitia, nam nemo nisi, placeat saepe tempora totam voluptatem. Dignissimos itaque neque quibusdam?</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+        </div>
+
+    </div>
 </div>
 </body>
 </html>

@@ -2,8 +2,8 @@ package com.sixt.sixtfront.controller;
 
 import java.util.List;
 
-import ch.qos.logback.core.net.server.Client;
 import com.sixt.sixtfront.form.VehicleForm;
+import com.sixt.sixtfront.model.Client;
 import com.sixt.sixtfront.model.Vehicle;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -90,16 +90,15 @@ class MainController {
 
         restTemplate.postForObject(url, request, Vehicle.class);
 
-        return "addVehicle";
+        return "redirect:/vehicleList";
     }
 
-    @RequestMapping(value = {"/clientList"}, method = RequestMethod.GET)
-    public List<Client> clientList(Model model) {
-        String url = "http://sixt-client/client";
-        List<Client> getClientList = restTemplate.getForObject(url, List.class);
-        model.addAttribute("clientList", getClientList);
-
-        return getClientList;
+    @RequestMapping(value = {"/showVehicle"}, method = RequestMethod.GET)
+    public Vehicle vehicleById(Model model) {
+        String url = "http://sixt-vehicle/vehicle/1";
+        Vehicle getVehicle = restTemplate.getForObject(url, Vehicle.class);
+        model.addAttribute("vehicle", getVehicle);
+        return getVehicle;
     }
 
 }

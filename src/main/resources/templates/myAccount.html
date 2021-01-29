@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>My Vehicle</title>
+    <title>SIXT</title>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
 </head>
 <body>
@@ -36,22 +36,37 @@
         </div>
     </nav>
 
-    <h1 th:utext="${vehicle.brand}">...</h1>
+    <h1>My Account</h1>
     <div class="container" style="display: flex; justify-content: center; margin-top: 30px;">
-       <div class="row">
-           <div class="card col-12" style="margin: 20px;">
-               <img class="card-img-top" src="https://www.largus.fr/images/images/prix-audi-a5-sportback4.jpg" alt="Card image cap" style="height: 400px; width: 440px; display: block; margin: 0 auto;">
-               <div class="card-body">
-                   <h4 class="card-title" th:utext="${vehicle.brand}">...</h4>
-                   <h5 th:utext="${vehicle.model}">...</h5>
-                   <p th:utext="${vehicle.color}">...</p>
-                   <p th:utext="${vehicle.rentPrice}" style="display: inline;">...</p>
-                   <p style="display: inline;"> $ per day</p>
-                   <p class="card-text" style="margin-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur beatae distinctio dolor dolorem, dolorum expedita id mollitia, nam nemo nisi, placeat saepe tempora totam voluptatem. Dignissimos itaque neque quibusdam?</p>
-                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-               </div>
-           </div>
-       </div>
+        <div class="card" style="width: 18rem; border: none;">
+            <img class="card-img-top" th:src="@{/avatar.png}" alt="me">
+            <div class="card-body">
+                <h5 class="card-title" th:utext="${getClient.firstName}" style="text-align:center; font-weight: bold; font-size: 48px;">...</h5>
+                <div style="margin-bottom:10px;">
+                    <h6 style="display: inline">First Name:</h6>
+                    <p th:utext="${getClient.firstName}" style="display: inline"></p>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <h6 style="display: inline">Last Name:</h6>
+                    <p th:utext="${getClient.lastName}" style="display: inline"></p>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <h6 style="display: inline">Date of Birth:</h6>
+                    <p th:utext="${getClient.dateOfBirth}" style="display: inline"></p>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <h6 style="display: inline">License Number:</h6>
+                    <p th:utext="${getClient.licenseNumber}" style="display: inline"></p>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <h6 style="display: inline">License Acquisition Date:</h6>
+                    <p th:utext="${getClient.licenseAcquisitionDate}" style="display: inline"></p>
+                </div>
+
+
+                <a href="#" class="btn btn-primary">Modify Profile</a>
+            </div>
+        </div>
     </div>
 </div>
 </body>
