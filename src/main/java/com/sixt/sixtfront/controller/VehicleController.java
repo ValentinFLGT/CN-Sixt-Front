@@ -2,7 +2,6 @@ package com.sixt.sixtfront.controller;
 
 import java.util.List;
 
-import ch.qos.logback.core.net.server.Client;
 import com.sixt.sixtfront.model.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -46,15 +45,6 @@ class MainController {
         model.addAttribute("vehicleList", getVehicleList);
 
         return getVehicleList;
-    }
-
-    @RequestMapping(value = {"/clientList"}, method = RequestMethod.GET)
-    public List<Client> clientList(Model model) {
-        String url = "http://sixt-client/client";
-        List<Client> getClientList = restTemplate.getForObject(url, List.class);
-        model.addAttribute("clientList", getClientList);
-
-        return getClientList;
     }
 
 //    @RequestMapping(value = {"/character/{id}"}, method = RequestMethod.GET)
