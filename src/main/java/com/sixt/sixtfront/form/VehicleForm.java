@@ -11,7 +11,6 @@ public class VehicleForm {
     private Float rentPrice;
     private Float kilometerPrice;
     private Integer horsePower;
-    private Boolean isAvailable;
 
     public Integer getId() {
         return id;
@@ -83,14 +82,6 @@ public class VehicleForm {
 
     public void setHorsePower(Integer horsePower) {
         this.horsePower = horsePower;
-    }
-
-    public Boolean getAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(Boolean available) {
-        isAvailable = available;
     }
 
 }

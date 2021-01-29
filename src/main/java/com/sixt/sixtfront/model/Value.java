@@ -14,19 +14,18 @@ public class Value {
     private Float rentPrice;
     private Float kilometerPrice;
     private Integer horsePower;
-    private Boolean isAvailable;
 
     public Value() {
     }
 
     public Value(Integer id,
-                   String licensePlate,
-                   String type, String brand,
-                   String model, String color,
-                   Float rentPrice,
-                   Float kilometerPrice,
-                   Integer horsePower,
-                   Boolean isAvailable) {
+                 String licensePlate,
+                 String type, String brand,
+                 String model, String color,
+                 Float rentPrice,
+                 Float kilometerPrice,
+                 Integer horsePower
+    ) {
         this.id = id;
         this.licensePlate = licensePlate;
         this.type = type;
@@ -36,7 +35,6 @@ public class Value {
         this.rentPrice = rentPrice;
         this.kilometerPrice = kilometerPrice;
         this.horsePower = horsePower;
-        this.isAvailable = isAvailable;
     }
 
     public Integer getId() {
@@ -109,14 +107,6 @@ public class Value {
 
     public void setHorsePower(Integer horsePower) {
         this.horsePower = horsePower;
-    }
-
-    public Boolean getAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(Boolean available) {
-        isAvailable = available;
     }
 
 }
